@@ -2,14 +2,14 @@
 Réalisé en binôme avec Maëline LEFEUVRE.
 
 ## Installation
-    `git clone https://github.com/gaetanvetillard/SimplePhysicsEngine.git`
+    git clone https://github.com/gaetanvetillard/SimplePhysicsEngine.git
 
 Sur Linux :
 
-    `sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
+    sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
     cd .\SimplePhysicsEngine\SimplePhysicsEngine
     make
-    ./spe.bin`
+    ./spe.bin
 Sur Windows, le projet vs est déjà prêt.
 
 ## Utilisation
