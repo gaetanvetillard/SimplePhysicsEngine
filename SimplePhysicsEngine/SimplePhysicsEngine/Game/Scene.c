@@ -493,7 +493,6 @@ void Scene_UpdateGame(Scene *scene)
     // On supprime une balle
     if (input->mouseLPressed && input->ballSelected == 5) {
         BallQuery nearestBall = Scene_GetNearestBall(scene, mousePos);
-        printf("%f\n",  nearestBall.distance);
 
         if (nearestBall.ball)
             Scene_RemoveBall(scene, nearestBall.ball);
