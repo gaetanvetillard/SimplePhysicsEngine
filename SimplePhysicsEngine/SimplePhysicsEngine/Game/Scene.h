@@ -12,6 +12,7 @@
 #include "Camera.h"
 #include "Textures.h"
 #include "Input.h"
+#include "Stars.h"
 
 /// @brief Structure représentant le résultat d'une recherche de balle.
 typedef struct BallQuery_s
@@ -23,16 +24,53 @@ typedef struct BallQuery_s
     float distance;
 } BallQuery;
 
-#define MAX_QUERY_COUNT 4
+#define MAX_QUERY_COUNT 20
+
+
+/// @brief Structure représentant le score
+/// Elle contient tous les éléments nécessaires pour afficher le score
+typedef struct Score_s {
+    /// @brief Score de l'utilisateur.
+    int score;
+
+    /// @brief 1 si on doit mettre à jour le score, 0 sinon
+    int scoreHasChanged;
+
+    /// @brief Chaine de caractère contenant Score : %d
+    char* scoreText[64];
+
+    /// @brief Taille et position du texte score
+    SDL_Rect position;
+
+    /// @brief Surface
+    SDL_Surface* surface;
+
+    /// @brief 
+    SDL_Texture* texture;
+} Score;
+
+
 
 /// @brief Structure représentant la scène de la simulation.
 /// Elle contient la caméra par laquelle la scène est vue ainsi que toutes les balles.
 typedef struct Scene_s
 {
+    /// @brief Structure Score permettant d'afficher notre score
+    Score score;
+
     /// @brief Moteur de rendu.
     Renderer *m_renderer;
 
     Input *m_input;
+
+    /// @brief Menu title font
+    TTF_Font* titleFont;
+
+    /// @brief Menu button font
+    TTF_Font* buttonFont;
+
+    /// @brief Score font
+    TTF_Font* scoreFont;
 
     /// @brief Caméra par laquelle la scène est vue.
     Camera *m_camera;
@@ -62,6 +100,13 @@ typedef struct Scene_s
 
     /// @brief Accumulateur pour le pas de temps fixe.
     float m_accu;
+
+    /// @brief Tableau contenant les étoiles présentes dans la scène.
+    Star* m_stars;
+
+    /// @brief Nombre d'étoiles dans la scène.
+    int m_starsCount;
+
 } Scene;
 
 /// @brief Construit une scène.
@@ -94,8 +139,22 @@ Vec2 Scene_GetMousePosition(Scene *scene);
 /// @brief Ajoute une balle à la scène.
 /// @param[in,out] scene la scène.
 /// @param[in] position la position de la nouvelle balle.
+/// @param[in] type le type de balle
 /// @return EXIT_SUCCESS ou EXIT_FAILURE.
-Ball *Scene_CreateBall(Scene *scene, Vec2 position);
+Ball *Scene_CreateBall(Scene *scene, Vec2 position, int type);
+
+
+/// @brief Ajoute une étoile à la scène.
+/// @param[in,out] scene la scène.
+/// @param[in] position la position de la nouvelle étoile.
+/// @return EXIT_SUCCESS ou EXIT_FAILURE.
+Star* Scene_CreateStar(Scene* scene, Vec2 position);
+
+/// @brief Supprime une étoile de la scène.
+/// @param[in,out] scene la scène.
+/// @param[in,out] star pointeur vers l'étoile à supprimer.
+void Scene_RemoveStar(Scene* scene, Star* star);
+
 
 /// @brief Supprime une balle de la scène.
 /// Les adresses des balles sont invalidées après l'appel à cette fonction.
@@ -140,7 +199,11 @@ BallQuery Scene_GetNearestBall(Scene *scene, Vec2 position);
 /// @param[out] queries tableau dans lequel vont être écrit les résultats.
 /// Il doit contenir au moins queryCount cases.
 /// @param[in] queryCount le nombre de balles à rechercher.
-/// @return EXIT_SUCCESS ou EXIT_FAILURE. Le resultat de la recherche est écrit dans le tableau queries.
+/// @return le nombre de validCount. Le resultat de la recherche est écrit dans le tableau queries.
 int Scene_GetNearestBalls(Scene *scene, Vec2 position, BallQuery *queries, int queryCount);
+
+/// @brief Recherche dans une scène si les étoiles ont été atteintes par une balle.
+/// @param[in] scene la scène dans laquelle faire la recherche.
+void Scene_CheckStarHit(Scene* scene);
 
 #endif

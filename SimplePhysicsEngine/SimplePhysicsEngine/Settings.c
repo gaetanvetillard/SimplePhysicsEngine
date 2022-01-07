@@ -17,6 +17,12 @@ int Settings_InitSDL()
         printf("ERROR - IMG_Init %s\n", IMG_GetError());
     }
 
+
+    // Initialise SDL_ttf
+    if (TTF_Init() < 0) {
+        printf("ERROR - TTF_Init %s\n", TTF_GetError());
+    }
+
     return EXIT_SUCCESS;
 }
 

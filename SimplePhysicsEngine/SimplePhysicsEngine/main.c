@@ -26,6 +26,8 @@ int main(int argc, char *argv[])
 
     // Lance le temps global du jeu
     Timer_Start(g_time);
+    
+    
 
     bool quitGame = false;
     while (!quitGame)
@@ -33,18 +35,20 @@ int main(int argc, char *argv[])
         // Crée la scène
         scene = Scene_New(renderer);
         if (!scene) goto ERROR_LABEL;
+        
 
         // Boucle de rendu
         while (true)
         {
-            if (scene->m_input->quitPressed || scene->m_input->restartPressed)
-            {
-                quitGame = scene->m_input->quitPressed;
-                break;
-            }
+           if (scene->m_input->quitPressed || scene->m_input->restartPressed)
+           {
+               quitGame = scene->m_input->quitPressed;
+               break;
+           }
 
             // Met à jour le temps global
             Timer_Update(g_time);
+                        
 
             // Met à jour la scène
             Scene_Update(scene);

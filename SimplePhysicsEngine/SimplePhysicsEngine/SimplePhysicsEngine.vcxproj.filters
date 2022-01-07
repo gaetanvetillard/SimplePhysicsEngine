@@ -66,6 +66,15 @@
     <ClCompile Include="Utils\Window.c">
       <Filter>Fichiers sources\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\Menu.c">
+      <Filter>Fichiers sources\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\ToolsBar.c">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Stars.c">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Settings.h">
@@ -103,6 +112,15 @@
     </ClInclude>
     <ClInclude Include="Utils\Window.h">
       <Filter>Fichiers d%27en-tête\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Menu.h">
+      <Filter>Fichiers d%27en-tête\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\ToolsBar.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Stars.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

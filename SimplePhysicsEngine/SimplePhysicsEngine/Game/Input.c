@@ -7,6 +7,9 @@ Input *Input_New()
     input = (Input *)calloc(1, sizeof(Input));
     if (!input) goto ERROR_LABEL;
 
+    // initialisation de la balle selectionée 
+    input->ballSelected = 0;
+
     return input;
 
 ERROR_LABEL:
@@ -32,6 +35,7 @@ void Input_Update(Input *input)
     input->restartPressed = false;
     input->mouseLPressed = false;
     input->mouseRPressed = false;
+    input->spaceKeyDown = false;
 
     int lastMouseX = input->mouseX;
     int lastMouseY = input->mouseY;
@@ -50,13 +54,47 @@ void Input_Update(Input *input)
 
             switch (evt.key.keysym.scancode)
             {
+            // ECHAP pour accéder au menu pause
             case SDL_SCANCODE_ESCAPE:
-                input->quitPressed = true;
+                input->menuOpened = !input->menuOpened;
                 break;
 
+            // ENTREE pour relancer une partie
             case SDL_SCANCODE_RETURN:
                 input->restartPressed = true;
                 break;
+
+            // ESPACE pour réinitialiser la vue
+            case SDL_SCANCODE_SPACE:
+                input->spaceKeyDown = true;
+                break;
+
+            // Choix de la balle 
+            case SDL_SCANCODE_1:
+                input->ballSelected = 0;
+                break;
+
+            case SDL_SCANCODE_2:
+                input->ballSelected = 1;
+                break;
+
+            case SDL_SCANCODE_3:
+                input->ballSelected = 2;
+                break;
+               
+            case SDL_SCANCODE_4:
+                input->ballSelected = 3;
+                break;
+
+            case SDL_SCANCODE_5:
+                input->ballSelected = 4;
+                break;
+
+            case SDL_SCANCODE_6:
+                input->ballSelected = 5;
+                break;
+            // Fin du choix de la balle
+                
             default:
                 break;
             }
@@ -71,6 +109,17 @@ void Input_Update(Input *input)
             default:
                 break;
             }
+            break;
+
+        case SDL_MOUSEWHEEL:
+            // Choix de la balle, molette up pour aller vers la droite
+            // molette down pour aller vers la gauche
+            if (evt.wheel.y > 0)
+                if (input->ballSelected == 5) input->ballSelected = 0;
+                else input->ballSelected += 1;
+            else
+                if (input->ballSelected == 0) input->ballSelected = 5;
+                else input->ballSelected -= 1;
             break;
 
         case SDL_MOUSEMOTION:
