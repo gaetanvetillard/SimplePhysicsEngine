@@ -5,6 +5,7 @@
 #include "../Utils/Timer.h"
 #include "../Utils/Menu.h"
 #include "ToolsBar.h"
+#include <SDL2/SDL_ttf.h>
 
 int Scene_DoubleCapacity(Scene *scene);
 
@@ -68,7 +69,7 @@ Scene *Scene_New(Renderer *renderer)
     for (int i = 0; i < 100; i++) {
         float x = rand() % 101 - 50;
         float y = rand() % 16 + 5;
-        Star* star = Scene_CreateStar(scene, Vec2_Set(x, y));
+        Scene_CreateStar(scene, Vec2_Set(x, y));
     }
     
 
@@ -177,10 +178,6 @@ Star* Scene_CreateStar(Scene* scene, Vec2 position)
     *star = Star_Set(position);
 
     return star;
-
-ERROR_LABEL:
-    printf("ERROR - Scene_CreateStar()\n");
-    return NULL;
 }
 
 void Scene_RemoveStar(Scene* scene, Star* star) {
@@ -609,7 +606,6 @@ void Scene_Render(Scene *scene)
     if (scene->m_input->mouseRDown == false && !scene->m_input->menuOpened && scene->m_input->ballSelected != 5)
     {
         // Dessine les ressorts inactifs
-        int validCount = scene->m_validCount;
         BallQuery *queries = scene->m_queries;
         for (int i = 0; i < MAX_QUERY_COUNT; ++i)
         {

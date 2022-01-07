@@ -13,6 +13,7 @@ EXE = spe.bin
 #debug exe name
 DEXE = spe_d.bin
 
+
 #add all needed files here! (just C files not header)
 SUBDIRS = Game/ Utils/
 RDIR = ./
@@ -42,7 +43,7 @@ DOBJ = main_d.o Settings_d.o $(GAM_DOBJ) $(UTI_DOBJ)
 # modify path to match your target architecture ( x86 or x64), so it will link to the good library 
 LIBPATH = 
 # list of libraries to be linked dynamically
-LIBS = -lm -lSDL2 `sdl2-config --libs` -lSDL2_image #-fopenmp
+LIBS = -lm -lSDL2 `sdl2-config --libs` -lSDL2_image -lSDL2_ttf#-fopenmp
 
 # recipes
 

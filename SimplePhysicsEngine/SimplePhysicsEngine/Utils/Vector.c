@@ -1,4 +1,4 @@
-﻿#include "vector.h"
+﻿#include "Vector.h"
 
 Vec2 Vec2_Set(float x, float y)
 {
