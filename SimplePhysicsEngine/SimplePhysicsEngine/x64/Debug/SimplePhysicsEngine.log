@@ -1,2 +1,19 @@
-﻿  Textures.c
+﻿  Scene.c
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Game\Scene.c(70,32): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Game\Scene.c(71,31): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Game\Scene.c(199,62): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Game\Scene.c(199,80): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+  Menu.c
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(50,31): warning C4133: 'fonction' : types incompatibles - de 'SDL_Surface *' à 'SDL_Texture *'
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(58,54): warning C4133: 'fonction' : types incompatibles - de 'SDL_Surface *' à 'SDL_Texture *'
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(21,1): warning C4133: 'initialisation' : types incompatibles - de 'SDL_Texture *' à 'SDL_Surface *'
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(41,108): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(54,107): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Menu.c(67,106): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  Vector.c
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Vector.c(39,16): warning C4244: 'return' : conversion de 'double' en 'float', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Vector.c(44,24): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\SimplePhysicsEngine\Utils\Vector.c(52,16): warning C4244: 'return' : conversion de 'double' en 'float', perte possible de données
+  Génération de code en cours...
+  LINK : D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\Bin\SimplePhysicsEngine.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
   SimplePhysicsEngine.vcxproj -> D:\Algorithmie et programmation en C\INF1031\TP Final\TPfinS1_Basecode\SimplePhysicsEngine\Bin\SimplePhysicsEngine.exe

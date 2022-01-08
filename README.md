@@ -10,7 +10,11 @@ Sur Linux :
     cd .\SimplePhysicsEngine\SimplePhysicsEngine
     make
     ./spe.bin
-Sur Windows, le projet vs est déjà prêt.
+
+Sur Windows :
+
+    cd ./SimplePhysicsEngine/Bin
+    ./SimplePhysicsEngine.exe
 
 ## Utilisation
 **Objectif**

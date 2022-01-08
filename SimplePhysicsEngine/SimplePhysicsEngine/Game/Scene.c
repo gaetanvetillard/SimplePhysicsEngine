@@ -5,7 +5,7 @@
 #include "../Utils/Timer.h"
 #include "../Utils/Menu.h"
 #include "ToolsBar.h"
-#include <SDL2/SDL_ttf.h>
+#include "../Settings.h"
 
 int Scene_DoubleCapacity(Scene *scene);
 
